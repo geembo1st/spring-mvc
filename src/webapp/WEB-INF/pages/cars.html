@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+<h1>Cars</h1>
+<div>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Model</th>
+            <th>Price</th>
+        </tr>
+        <tr th:if="${car != 0}">
+            <td th:text="${car.getId()}"></td>
+            <td th:text="${car.getModel()}"></td>
+            <td th:text="${car.getPrice()}"></td>
+        </tr>
+        <tr th:each="car : ${cars}" th:if="${car == 0}">
+            <td th:text="${car.getId()}"></td>
+            <td th:text="${car.getModel()}"></td>
+            <td th:text="${car.getPrice()}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
